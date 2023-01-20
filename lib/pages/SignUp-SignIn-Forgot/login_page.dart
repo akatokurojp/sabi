@@ -149,31 +149,31 @@ class _LoginPageState extends State<LoginPage> {
                 ),
 
                 //sign with google
-                Container(
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(color: Colors.black),
-                      borderRadius: BorderRadius.circular(10)),
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
-                    child: Row(
-                      children: [
-                        Image(
-                          image: AssetImage("lib/assets/icons/google.png"),
-                          height: 30,
-                          width: 30,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 40.0),
-                          child: Text(
-                            "Continue with Google",
-                            style: TextStyle(fontSize: 18),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                // Container(
+                //   decoration: BoxDecoration(
+                //       color: Colors.white,
+                //       border: Border.all(color: Colors.black),
+                //       borderRadius: BorderRadius.circular(10)),
+                //   child: Padding(
+                //     padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+                //     child: Row(
+                //       children: [
+                //         Image(
+                //           image: AssetImage("lib/assets/icons/google.png"),
+                //           height: 30,
+                //           width: 30,
+                //         ),
+                //         Padding(
+                //           padding: const EdgeInsets.only(left: 40.0),
+                //           child: Text(
+                //             "Continue with Google",
+                //             style: TextStyle(fontSize: 18),
+                //           ),
+                //         ),
+                //       ],
+                //     ),
+                //   ),
+                // ),
 
                 SizedBox(
                   height: 80,

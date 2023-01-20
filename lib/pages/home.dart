@@ -4,6 +4,7 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:sabi/pages/SignUp-SignIn-Forgot/chart.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:sabi/pages/db_chart.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -15,6 +16,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   double _temperature = 0;
   bool _ledStatus = false;
+  double _humidity = 0;
   final databaseReference = FirebaseDatabase.instance.reference();
   bool val = false;
   @override
@@ -29,6 +31,11 @@ class _HomeState extends State<Home> {
     databaseReference.child("LED_STATUS").onValue.listen((event) {
       setState(() {
         _ledStatus = event.snapshot.value == "ON" ? true : false;
+      });
+    });
+    databaseReference.child("Humidity").onValue.listen((event) {
+      setState(() {
+        _humidity = double.parse(event.snapshot.value.toString());
       });
     });
   }
@@ -46,7 +53,7 @@ class _HomeState extends State<Home> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "${_temperature.toString()}°",
+                    "${_temperature.toString()}",
                     style: TextStyle(fontSize: 100),
                   ),
                   Text("°", style: TextStyle(fontSize: 100)),
@@ -66,11 +73,6 @@ class _HomeState extends State<Home> {
                   SizedBox(
                     width: 10,
                   ),
-                  Text("|", style: TextStyle(fontSize: 20)),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text("Fahrenheit", style: TextStyle(fontSize: 20)),
                 ],
               ),
               SizedBox(
@@ -120,7 +122,7 @@ class _HomeState extends State<Home> {
                                 width: 50,
                               ),
                               Text(
-                                "75%",
+                                "${_humidity.toString()}°",
                                 style: TextStyle(
                                     fontSize: 16,
                                     color: Colors.white,

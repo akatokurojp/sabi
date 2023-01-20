@@ -6,6 +6,7 @@ import 'package:sabi/pages/SignUp-SignIn-Forgot/login_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:sabi/pages/coba.dart';
 import 'package:sabi/pages/coba2.dart';
+import 'package:sabi/pages/db_chart.dart';
 import 'package:sabi/pages/home.dart';
 import 'package:sabi/pages/splash.dart';
 
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      home: Splash(),
     );
   }
 }

@@ -73,13 +73,13 @@ class _LineChartSample2State extends State<LineChartSample2> {
     Widget text;
     switch (value.toInt()) {
       case 2:
-        text = const Text('16:00', style: style);
+        text = const Text('12:00', style: style);
         break;
       case 5:
-        text = const Text('17:00', style: style);
+        text = const Text('13:00', style: style);
         break;
       case 8:
-        text = const Text('18:00', style: style);
+        text = const Text('14:00', style: style);
         break;
       default:
         text = const Text('', style: style);
@@ -104,11 +104,12 @@ class _LineChartSample2State extends State<LineChartSample2> {
         text = '10°C';
         break;
       case 3:
-        text = '30°C';
+        text = '20°C';
         break;
       case 5:
-        text = '50°C';
+        text = '30°C';
         break;
+
       default:
         return Container();
     }
@@ -178,6 +179,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
             FlSpot(6.8, 3.1),
             FlSpot(8, 4),
             FlSpot(9.5, 3),
+            FlSpot(10, 4),
             FlSpot(11, 4),
           ],
           isCurved: true,
